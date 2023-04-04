@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState, useEffect } from "react";
+import TodoList from "./components/TodoList";
+import { createGlobalStyle } from "styled-components";
+import TodoHead from "./components/TodoHead";
+import TodoTemplate from "./components/TodoTemplate";
+import TodoCreate from "./components/TodoCreate";
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background: #e9ecef
+  }
+`;
 
 function App() {
+  const [todoList, setTodoList] = useState(() => {
+    const localTodoList = localStorage.getItem("localTodoList");
+    return localTodoList ? JSON.parse(localTodoList) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("localTodoList", JSON.stringify(todoList));
+  }, [todoList]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <TodoTemplate>
+        <TodoHead />
+        <TodoList todoList={todoList} setTodoList={setTodoList} />
+        <TodoCreate todoList={todoList} setTodoList={setTodoList} />
+      </TodoTemplate>
+    </>
   );
 }
 
