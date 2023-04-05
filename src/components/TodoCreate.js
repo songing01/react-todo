@@ -12,7 +12,7 @@ const TodoCreate = ({ todoList, setTodoList }) => {
       setTodoList([...todoList, newItem]);
     }
     setText("");
-    setId(id + 1);
+    setId(Date.now());
   };
 
   const handleChange = (e) => {
