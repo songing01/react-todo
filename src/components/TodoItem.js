@@ -15,9 +15,7 @@ const TodoItem = ({ text, todoList, setTodoList, id, done }) => {
     <>
       <TodoItemBlock>
         <Text isDone={done}>{text}</Text>
-        <ToggleButton onClick={toggleItem} isDone={done}>
-          ✓
-        </ToggleButton>
+        <ToggleButton onClick={toggleItem}>✓</ToggleButton>
         <DeleteButton onClick={deleteItem}>X</DeleteButton>
       </TodoItemBlock>
       <Line />
