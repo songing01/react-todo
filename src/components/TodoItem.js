@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 const TodoItem = ({ text, todoList, setTodoList, id, done }) => {
-  const deleteItem = (e) => {
+  const deleteItem = () => {
     setTodoList((todoList) => todoList.filter((item) => item.id !== id));
   };
 
