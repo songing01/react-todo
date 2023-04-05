@@ -65,7 +65,6 @@ const DeleteButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-
   transition: 0.125s all ease-in;
 `;
 const ToggleButton = styled.button`

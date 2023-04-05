@@ -7,7 +7,6 @@ const TodoTemplate = ({ children }) => {
 const TodoTemplateBlock = styled.div`
   width: 512px;
   height: 768px;
-
   position: relative;
   background: white;
   border-radius: 16px;

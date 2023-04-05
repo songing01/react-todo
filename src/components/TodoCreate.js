@@ -19,16 +19,14 @@ const TodoCreate = ({ todoList, setTodoList }) => {
     setText(e.target.value);
   };
   return (
-    <div>
-      <TodoForm onSubmit={addItem}>
-        <InputBox
-          value={text}
-          placeholder="할 일을 입력하세요."
-          onChange={handleChange}
-        />
-        <AddButton>+</AddButton>
-      </TodoForm>
-    </div>
+    <TodoForm onSubmit={addItem}>
+      <InputBox
+        value={text}
+        placeholder="할 일을 입력하세요."
+        onChange={handleChange}
+      />
+      <AddButton>+</AddButton>
+    </TodoForm>
   );
 };
 
