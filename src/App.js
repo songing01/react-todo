@@ -25,6 +25,12 @@ function App() {
     <>
       <GlobalStyle />
       <TodoTemplate>
+        <img
+          src={
+            "http://tong.visitkorea.or.kr/cms/resource/30/2488130_image2_1.jpg"
+          }
+          alt=""
+        />
         <TodoHead />
         <TodoList todoList={todoList} setTodoList={setTodoList} />
         <TodoCreate todoList={todoList} setTodoList={setTodoList} />
